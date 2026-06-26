@@ -1,0 +1,229 @@
+/* Color Palette & Global Layout Settings Variables */
+:root {
+    --bg-image: url('img/background.jpg');
+
+    --text-primary: #ffffff;
+    --text-secondary: #e3e8f5;
+
+    --magenta-brand: #d6007a;
+    --discord-blurple: #5865F2;
+    --steam-white: #ffffff;
+
+    --background-dark: #081A3A;
+    --background-light: #10275A;
+
+    --divider-line: rgba(255,255,255,.15);
+
+    --content-width: 620px;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Body & Background */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-primary);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16,39,90,.82),
+            rgba(8,26,58,.94)
+        ),
+        var(--bg-image);
+
+    background-color: var(--background-dark);
+
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 50px 24px;
+
+    position: relative;
+}
+
+/* Dark overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(5,12,28,.25);
+
+    z-index: 1;
+}
+
+/* Main wrapper with increased vertical spacing */
+.wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Increased from 24px */
+}
+
+/* Header + Avatar */
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 24px;
+}
+
+/* Profile Picture */
+
+.profile-picture {
+    width: 250px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    margin-bottom: 24px;
+    border: 4px solid rgba(255,255,255,0.15);
+}
+
+/* Community Section Logo */
+.community-logo {
+    width: 150px; /* Keeps it prominent but smaller than your main avatar */
+    height: auto;
+    margin-bottom: 16px;
+    display: block; /* Allows us to center it */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Typography with better spacing */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+h2 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 22px; /* Increased from 16px */
+    letter-spacing: -0.3px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.78; /* Increased from 1.65 */
+    color: var(--text-secondary);
+    margin-bottom: 24px; /* Increased from 18px */
+}
+
+.tagline {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Dividers */
+.divider {
+    border: none;
+    height: 1px;
+    background-color: var(--divider-line);
+    margin: 12px 0; /* Increased from 8px */
+}
+
+/* Button group with more spacing */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Increased from 14px */
+    margin-top: 24px; /* Increased from 18px */
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    background: transparent;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-instagram {
+    border: 2px solid var(--magenta-brand);
+    color: #ffffff;
+}
+.btn-instagram:hover {
+    background: var(--magenta-brand);
+    box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
+}
+
+.btn-discord {
+    border: 2px solid var(--discord-blurple);
+    color: #ffffff;
+}
+.btn-discord:hover {
+    background: var(--discord-blurple);
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
+}
+
+.btn-steam {
+    border: 2px solid var(--steam-white);
+    color: #ffffff;
+}
+.btn-steam:hover {
+    background: var(--steam-white);
+    color: #0f0f0f;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    margin-top: 48px; /* Increased from 40px */
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.2px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 30px 16px;
+    }
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+    .btn {
+        padding: 13px 22px;
+    }
+}
