@@ -106,12 +106,14 @@ body::before {
 
 /* Community Section Logo */
 .community-logo {
-    width: 150px; /* Keeps it prominent but smaller than your main avatar */
+    width: 150px;
     height: auto;
     margin-bottom: 16px;
-    display: block; /* Allows us to center it */
+    display: block;
     margin-left: auto;
     margin-right: auto;
+
+    filter: drop-shadow(0 0 12px rgba(40, 167, 69, 0.35));
 }
 
 
