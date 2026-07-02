@@ -5,7 +5,7 @@
     --text-primary: #ffffff;
     --text-secondary: #e3e8f5;
 
-    --magenta-brand: #d6007a;
+    --brand-accent: #d6007a;
     --discord-blurple: #5865F2;
     --steam-white: #ffffff;
 
@@ -24,8 +24,6 @@
     padding: 0;
 }
 
-
-
 /* Body & Background */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -40,7 +38,7 @@ body {
         radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0), 
         var(--bg-image);
 
-    background-color: #040b1a; /* New deeper fallback color */
+    background-color: #040b1a;
 
     background-size: cover, 24px 24px, cover;
     background-position: center top;
@@ -62,9 +60,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-
     background: rgba(5,12,28,.25);
-
     z-index: 1;
 }
 
@@ -76,7 +72,7 @@ body::before {
     max-width: var(--content-width);
     display: flex;
     flex-direction: column;
-    gap: 32px; /* Increased from 24px */
+    gap: 32px;
 }
 
 /* Header + Avatar */
@@ -90,7 +86,6 @@ body::before {
 }
 
 /* Profile Picture */
-
 .profile-picture {
     width: 250px;
     height: 320px;
@@ -98,8 +93,6 @@ body::before {
     object-position: center top;
     border-radius: 50%;
     margin-bottom: 24px;
-    
-    
     border: 3px solid rgba(214, 0, 122, 0.5); 
     box-shadow: 0 0 20px rgba(214, 0, 122, 0.25);
 }
@@ -112,11 +105,8 @@ body::before {
     display: block;
     margin-left: auto;
     margin-right: auto;
-
     filter: drop-shadow(0 0 12px rgba(40, 167, 69, 0.35));
 }
-
-
 
 /* Typography with better spacing */
 h1 {
@@ -140,9 +130,9 @@ h2 {
 
 p {
     font-size: 1.05rem;
-    line-height: 1.78; /* Increased from 1.65 */
+    line-height: 1.78;
     color: var(--text-secondary);
-    margin-bottom: 24px; /* Increased from 18px */
+    margin-bottom: 24px;
 }
 
 .tagline {
@@ -154,16 +144,16 @@ p {
 .divider {
     border: none;
     height: 1px;
-    background-color: var(--divider-line);
-    margin: 12px 0; /* Increased from 8px */
+    background: linear-gradient(90deg, transparent, var(--divider-line) 15%, var(--divider-line) 85%, transparent);
+    margin: 16px 0; 
 }
 
 /* Button group with more spacing */
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 18px; /* Increased from 14px */
-    margin-top: 24px; /* Increased from 18px */
+    gap: 18px;
+    margin-top: 24px;
 }
 
 /* Buttons */
@@ -184,11 +174,12 @@ p {
 }
 
 .btn-instagram {
-    border: 2px solid var(--magenta-brand);
+    border: 2px solid var(--brand-accent);
     color: #ffffff;
 }
+
 .btn-instagram:hover {
-    background: var(--magenta-brand);
+    background: var(--brand-accent);
     box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
 }
 
@@ -196,6 +187,7 @@ p {
     border: 2px solid var(--discord-blurple);
     color: #ffffff;
 }
+
 .btn-discord:hover {
     background: var(--discord-blurple);
     box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
@@ -205,6 +197,7 @@ p {
     border: 2px solid var(--steam-white);
     color: #ffffff;
 }
+
 .btn-steam:hover {
     background: var(--steam-white);
     color: #0f0f0f;
@@ -213,7 +206,7 @@ p {
 /* Footer */
 .site-footer {
     text-align: center;
-    margin-top: 48px; /* Increased from 40px */
+    margin-top: 48px;
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.35);
     letter-spacing: 0.2px;
