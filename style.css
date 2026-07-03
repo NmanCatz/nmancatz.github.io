@@ -24,34 +24,28 @@
     padding: 0;
 }
 
-/* Body & Background */
+/* Body & Background with Upgraded 3D Depth Layout */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-primary);
 
+    /* Cleaned up: Grid dots remain on top, center circle removed, deep vertical fade added */
     background:
-        linear-gradient(
-            180deg,
-            rgba(10, 24, 56, 0.88),  
-            rgba(4, 11, 26, 0.97)    
-        ),
-        radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0), 
+        radial-gradient(rgba(255, 255, 255, 0.1) 1.2px, transparent 0), 
+        linear-gradient(180deg, rgba(6, 17, 38, 0.88) 0%, rgba(4, 11, 26, 0.98) 100%), 
         var(--bg-image);
 
     background-color: #040b1a;
 
-    background-size: cover, 24px 24px, cover;
+    background-size: 32px 32px, cover, cover; 
     background-position: center top;
     background-attachment: fixed;
 
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
     padding: 50px 24px;
-
     position: relative;
 }
 
@@ -72,7 +66,7 @@ body::before {
     max-width: var(--content-width);
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 52px; 
 }
 
 /* Header + Avatar */
@@ -101,7 +95,8 @@ body::before {
 .community-logo {
     width: 150px;
     height: auto;
-    margin-bottom: 16px;
+    margin-top: -20px;  
+    margin-bottom: 12px; 
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -135,17 +130,29 @@ p {
     margin-bottom: 24px;
 }
 
+/* Upgraded Hero Subtitle Style */
 .tagline {
-    font-weight: 600;
-    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75); /* Balanced tone so the main title pops */
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    margin-top: 10px;                  /* Snugs it perfectly beneath your H1 */
+    margin-bottom: 0;                  /* Keeps clean macro handoff to layout container */
 }
 
 /* Dividers */
 .divider {
     border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--divider-line) 15%, var(--divider-line) 85%, transparent);
-    margin: 16px 0; 
+    height: 2px; 
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.15) 15%, 
+        rgba(255, 255, 255, 0.15) 85%, 
+        transparent 100%
+    );
+    margin: 32px 0; 
 }
 
 /* Button group with more spacing */
@@ -156,7 +163,7 @@ p {
     margin-top: 24px;
 }
 
-/* Buttons */
+/* Buttons with Smooth Cubic Transitions */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -171,6 +178,7 @@ p {
     background: transparent;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    will-change: transform;
 }
 
 .btn-instagram {
@@ -181,6 +189,7 @@ p {
 .btn-instagram:hover {
     background: var(--brand-accent);
     box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
+    transform: translateY(-2px); /* Tactical 3D Lift */
 }
 
 .btn-discord {
@@ -191,6 +200,7 @@ p {
 .btn-discord:hover {
     background: var(--discord-blurple);
     box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
+    transform: translateY(-2px); /* Tactical 3D Lift */
 }
 
 .btn-steam {
@@ -201,6 +211,7 @@ p {
 .btn-steam:hover {
     background: var(--steam-white);
     color: #0f0f0f;
+    transform: translateY(-2px); /* Tactical 3D Lift */
 }
 
 /* Footer */
@@ -212,7 +223,7 @@ p {
     letter-spacing: 0.2px;
 }
 
-/* Mobile */
+/* Mobile Responsiveness */
 @media (max-width: 480px) {
     body {
         padding: 30px 16px;
