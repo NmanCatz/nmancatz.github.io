@@ -216,24 +216,7 @@ p {
     transform: translateY(-2px); 
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
 
-::-webkit-scrollbar-track {
-    background: #040b1a; 
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(214, 0, 122, 0.3); 
-    border-radius: 10px;
-    border: 2px solid #040b1a; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--brand-accent); 
-}
 
 /* Footer */
 .site-footer {
