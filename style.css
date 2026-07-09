@@ -1,4 +1,6 @@
-/* Root Variables */
+/* ==========================================================================
+   1. ROOT VARIABLES & GLOBAL SETUP
+   ========================================================================== */
 :root {
     --bg-image: url('img/background.jpg');
 
@@ -17,14 +19,12 @@
     --content-width: 620px;
 }
 
-/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Body & Background */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-primary);
@@ -52,7 +52,9 @@ body::before {
     z-index: 1;
 }
 
-/* Layout Wrapper & Animations */
+/* ==========================================================================
+   2. LAYOUT CONTAINERS & SYSTEM RHYTHM
+   ========================================================================== */
 .wrapper {
     position: relative;
     z-index: 2;
@@ -75,7 +77,48 @@ body::before {
     }
 }
 
-/* Header & Profile Assets */
+/* ==========================================================================
+   3. TYPOGRAPHY HIERARCHY
+   ========================================================================== */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    text-shadow: 0 0 25px rgba(214, 0, 122, 0.4); 
+}
+
+h2 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 22px;
+    letter-spacing: -0.3px;
+    background: linear-gradient(180deg, #ffffff 30%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.78;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.tagline {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75); 
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    margin-top: 10px;                  
+    margin-bottom: 0;                  
+}
+
+/* ==========================================================================
+   4. PROFILE HEADER & IDENTITY
+   ========================================================================== */
 .header-section {
     display: flex;
     flex-direction: column;
@@ -107,7 +150,9 @@ body::before {
     filter: drop-shadow(0 0 12px rgba(40, 167, 69, 0.35));
 }
 
-/* Glassmorphism Card Containers */
+/* ==========================================================================
+   5. GLASSMORPHISM CARD CONTAINERS
+   ========================================================================== */
 .content-section {
     background: rgba(16, 39, 90, 0.2); 
     backdrop-filter: blur(12px);
@@ -125,46 +170,9 @@ body::before {
     box-shadow: 0 24px 48px rgba(214, 0, 122, 0.1);
 }
 
-/* Typography */
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 4px;
-    text-shadow: 0 0 25px rgba(214, 0, 122, 0.4); 
-}
-
-h2 {
-    font-size: 2.1rem;
-    font-weight: 600;
-    margin-bottom: 22px;
-    letter-spacing: -0.3px;
-    background: linear-gradient(180deg, #ffffff 30%, var(--text-secondary) 100%);
-    -webkit-background-clip: text;
-    background-clip: text; 
-    -webkit-text-fill-color: transparent;
-}
-
-p {
-    font-size: 1.05rem;
-    line-height: 1.78;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-}
-
-
-
-.tagline {
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.75); 
-    line-height: 1.5;
-    letter-spacing: 0.3px;
-    margin-top: 10px;                  
-    margin-bottom: 0;                  
-}
-
-/* UI Elements */
+/* ==========================================================================
+   6. UI BUTTON COMPONENTS
+   ========================================================================== */
 .button-group {
     display: flex;
     flex-direction: column;
@@ -172,7 +180,6 @@ p {
     margin-top: 28px;
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -234,7 +241,9 @@ p {
     transform: translateY(-2px); 
 }
 
-/* Custom Scrollbar */
+/* ==========================================================================
+   7. MISC & UTILITIES (SCROLLBAR, FOOTER)
+   ========================================================================== */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -253,7 +262,6 @@ p {
     background: var(--brand-accent); 
 }
 
-/* Footer */
 .site-footer {
     text-align: center;
     margin-top: 48px;
@@ -262,29 +270,37 @@ p {
     letter-spacing: 0.2px;
 }
 
-/* Media Queries */
+/* ==========================================================================
+   8. GLOBAL RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 480px) {
     body {
         padding: 30px 16px;
     }
+    
     .wrapper {
         gap: 24px;
     }
+    
     .content-section {
         padding: 24px 24px 32px; /* Upgrade: Perfectly scales the extra bottom cushion for mobile layouts */
         border-radius: 20px;
     }
+    
     h1 {
         font-size: 2.4rem;
     }
+    
     h2 {
         font-size: 1.75rem;
     }
+    
     p {
         font-size: 1rem;
         line-height: 1.7;
         margin-bottom: 20px;
     }
+    
     .btn {
         padding: 13px 22px;
     }
