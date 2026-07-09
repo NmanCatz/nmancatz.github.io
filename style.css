@@ -223,6 +223,17 @@ p {
     transform: translateY(-2px); 
 }
 
+.btn-crew {
+    border: 2px solid #28a745; /* Matches the custom green glow of your crew logo */
+    color: #ffffff;
+}
+
+.btn-crew:hover {
+    background: #28a745;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.4);
+    transform: translateY(-2px); 
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
