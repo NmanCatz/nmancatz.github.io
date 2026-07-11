@@ -16,9 +16,8 @@
 
     --divider-line: rgba(255, 255, 255, 0.15);
 
-    --content-width: 620px;
+    --content-width: 780px; 
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -90,7 +89,7 @@ h1 {
 h2 {
     font-size: 2.1rem;
     font-weight: 600;
-    margin-bottom: 22px;
+    margin-bottom: 32px; 
     letter-spacing: -0.3px;
     background: linear-gradient(180deg, #ffffff 30%, var(--text-secondary) 100%);
     -webkit-background-clip: text;
@@ -103,8 +102,8 @@ p {
     line-height: 1.78;
     color: var(--text-secondary);
     margin-bottom: 24px;
+    max-width: 660px; 
 }
-
 .tagline {
     font-size: 1.05rem;
     font-weight: 500;
@@ -170,23 +169,30 @@ p {
 }
 
 /* ==========================================================================
-   6. UI BUTTON COMPONENTS
+   6. UI BUTTON COMPONENTS 
+   ========================================================================== */
+/* ==========================================================================
+   6. UI BUTTON COMPONENTS 
    ========================================================================== */
 .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 14px; 
     margin-top: 28px;
+    width: 100%;
 }
 
 .btn {
-    display: inline-flex;
+    display: inline-flex; /* Restored to inline-flex for clean left-alignment */
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%;
-    padding: 15px 28px;
-    font-size: 1rem;
+    width: max-content; 
+    min-width: 224px; /* Keeps it the exact same size as a single CATZ column */
+    white-space: nowrap; 
+    margin: 0; /* Core Fix: Snaps the button back to the left alignment track */
+    padding: 15px 28px; 
+    font-size: 1rem; 
     font-weight: 500;
     text-decoration: none;
     border-radius: 50px;
@@ -196,16 +202,29 @@ p {
     will-change: transform;
 }
 
+/* Scoped specifically to ensure community grid items behave flawlessly */
+.button-group .btn {
+    width: 100%; 
+    min-width: 0; 
+    max-width: none;
+    margin: 0; 
+    padding: 15px 12px; 
+    font-size: 0.95rem; 
+}
+
+/* Subtle Global Hover Effect Lift */
+.btn:hover {
+    transform: translateY(-3px); 
+}
+
 /* Personal Brand Accent Button */
 .btn-instagram {
     border: 2px solid var(--brand-accent);
     color: #ffffff;
 }
-
 .btn-instagram:hover {
     background: var(--brand-accent);
     box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
-    transform: translateY(-2px); 
 }
 
 /* Steam Button */
@@ -213,11 +232,9 @@ p {
     border: 2px solid var(--steam-white);
     color: #ffffff;
 }
-
 .btn-steam:hover {
     background: var(--steam-white);
     color: #0f0f0f;
-    transform: translateY(-2px); 
 }
 
 /* Xbox X Button - Blue (Crew Website) */
@@ -225,11 +242,9 @@ p {
     border: 2px solid #0078d4;
     color: #ffffff;
 }
-
 .btn-xbox-blue:hover {
     background: #0078d4;
     box-shadow: 0 0 15px rgba(0, 120, 212, 0.4);
-    transform: translateY(-2px);
 }
 
 /* Xbox B Button - Red (Discord Server) */
@@ -237,11 +252,9 @@ p {
     border: 2px solid #e81123;
     color: #ffffff;
 }
-
 .btn-xbox-red:hover {
     background: #e81123;
     box-shadow: 0 0 15px rgba(232, 17, 35, 0.4);
-    transform: translateY(-2px);
 }
 
 /* Xbox A Button - Green (CATZ Instagram) */
@@ -249,13 +262,10 @@ p {
     border: 2px solid #107c11;
     color: #ffffff;
 }
-
 .btn-xbox-green:hover {
     background: #107c11;
     box-shadow: 0 0 15px rgba(16, 124, 17, 0.4);
-    transform: translateY(-2px);
 }
-
 /* ==========================================================================
    7. MISC & UTILITIES (SCROLLBAR, FOOTER)
    ========================================================================== */
@@ -288,17 +298,17 @@ p {
 /* ==========================================================================
    8. GLOBAL RESPONSIVE MEDIA QUERIES
    ========================================================================== */
-@media (max-width: 480px) {
-   body {
+@media (max-width: 768px) {
+    body {
         padding: 30px 16px;
     }
     
-   .wrapper {
+    .wrapper {
         gap: 36px; 
     }
     
     .content-section {
-        padding: 24px 24px 32px; /* Upgrade: Perfectly scales the extra bottom cushion for mobile layouts */
+        padding: 24px 24px 32px;
         border-radius: 20px;
     }
     
@@ -315,8 +325,20 @@ p {
         line-height: 1.7;
         margin-bottom: 20px;
     }
+
+    .button-group {
+        grid-template-columns: 1fr; 
+        gap: 16px; 
+    }
+
+    .button-group .btn {
+        width: 100%; 
+        padding: 15px 28px; 
+        font-size: 1rem;
+    }
     
-    .btn {
-        padding: 13px 22px;
+  .btn {
+        width: 100%;
+        max-width: 100%; 
     }
 }
