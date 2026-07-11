@@ -18,6 +18,7 @@
 
     --content-width: 780px; 
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -36,7 +37,6 @@ body {
     position: relative;
 }
 
-/* Fixed Background Canvas for Mobile & Desktop */
 body::before {
     content: "";
     position: fixed;
@@ -87,7 +87,6 @@ h1 {
     text-shadow: 0 0 25px rgba(255, 255, 255, 0.35); 
 }
 
-
 h2 {
     font-size: 2.1rem;
     font-weight: 600;
@@ -106,6 +105,7 @@ p {
     margin-bottom: 24px;
     max-width: 660px; 
 }
+
 .tagline {
     font-size: 1.05rem;
     font-weight: 500;
@@ -166,10 +166,9 @@ p {
 
 .content-section:hover {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.2); /* Gentle white halo border */
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 0 24px rgba(255, 255, 255, 0.06); /* Soft white mist glow layer */
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 0 24px rgba(255, 255, 255, 0.06);
 }
-
 
 /* ==========================================================================
    6. UI BUTTON COMPONENTS 
@@ -183,14 +182,14 @@ p {
 }
 
 .btn {
-    display: inline-flex; /* Restored to inline-flex for clean left-alignment */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     width: max-content; 
-    min-width: 224px; /* Keeps it the exact same size as a single CATZ column */
+    min-width: 224px;
     white-space: nowrap; 
-    margin: 0; /* Core Fix: Snaps the button back to the left alignment track */
+    margin: 0;
     padding: 15px 28px; 
     font-size: 1rem; 
     font-weight: 500;
@@ -202,7 +201,6 @@ p {
     will-change: transform;
 }
 
-/* Scoped specifically to ensure community grid items behave flawlessly */
 .button-group .btn {
     width: 100%; 
     min-width: 0; 
@@ -212,60 +210,60 @@ p {
     font-size: 0.95rem; 
 }
 
-/* Subtle Global Hover Effect Lift */
 .btn:hover {
     transform: translateY(-3px); 
 }
 
-/* Personal Brand Accent Button */
 .btn-instagram {
     border: 2px solid var(--brand-accent);
     color: #ffffff;
 }
+
 .btn-instagram:hover {
     background: var(--brand-accent);
     box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
 }
 
-/* Steam Button */
 .btn-steam {
     border: 2px solid var(--steam-white);
     color: #ffffff;
 }
+
 .btn-steam:hover {
     background: var(--steam-white);
     color: #0f0f0f;
 }
 
-/* Xbox X Button - Blue (Crew Website) */
 .btn-xbox-blue {
     border: 2px solid #0078d4;
     color: #ffffff;
 }
+
 .btn-xbox-blue:hover {
     background: #0078d4;
     box-shadow: 0 0 15px rgba(0, 120, 212, 0.4);
 }
 
-/* Xbox B Button - Red (Discord Server) */
 .btn-xbox-red {
     border: 2px solid #e81123;
     color: #ffffff;
 }
+
 .btn-xbox-red:hover {
     background: #e81123;
     box-shadow: 0 0 15px rgba(232, 17, 35, 0.4);
 }
 
-/* Xbox A Button - Green (CATZ Instagram) */
 .btn-xbox-green {
     border: 2px solid #107c11;
     color: #ffffff;
 }
+
 .btn-xbox-green:hover {
     background: #107c11;
     box-shadow: 0 0 15px rgba(16, 124, 17, 0.4);
 }
+
 /* ==========================================================================
    7. MISC & UTILITIES (SCROLLBAR, FOOTER)
    ========================================================================== */
