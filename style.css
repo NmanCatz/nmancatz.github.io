@@ -61,7 +61,7 @@ body::before {
     max-width: var(--content-width);
     display: flex;
     flex-direction: column;
-    gap: 48px; /* Upgrade: Expanded from 32px for premium breathing room */
+    gap: 64px; 
     animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -83,9 +83,11 @@ h1 {
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: -0.5px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     text-shadow: 0 0 25px rgba(255, 255, 255, 0.35); 
 }
+
+
 h2 {
     font-size: 2.1rem;
     font-weight: 600;
@@ -122,8 +124,8 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 24px;
+    margin-top: 40px;    
+    margin-bottom: 16px; 
 }
 
 .profile-picture {
@@ -132,7 +134,7 @@ p {
     object-fit: cover;
     object-position: center top;
     border-radius: 50%;
-    margin-bottom: 24px;
+    margin-bottom: 36px; 
     border: 3px solid rgba(214, 0, 122, 0.5); 
     box-shadow: 0 0 20px rgba(214, 0, 122, 0.25);
 }
