@@ -62,7 +62,7 @@ body::before {
     max-width: var(--content-width);
     display: flex;
     flex-direction: column;
-    gap: 32px; /* Snugged up to look beautifully grouped as individual cards */
+    gap: 48px; /* Upgrade: Expanded from 32px for premium breathing room */
     animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -85,9 +85,8 @@ h1 {
     font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 4px;
-    text-shadow: 0 0 25px rgba(214, 0, 122, 0.4); 
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.35); 
 }
-
 h2 {
     font-size: 2.1rem;
     font-weight: 600;
@@ -158,7 +157,7 @@ p {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 40px 40px 48px; /* Upgrade: Added 8px of extra cushion to the bottom floor */
+    padding: 40px 40px 48px; 
     border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
@@ -166,8 +165,8 @@ p {
 
 .content-section:hover {
     transform: translateY(-4px);
-    border-color: rgba(214, 0, 122, 0.3); /* Neon glow touch on hover */
-    box-shadow: 0 24px 48px rgba(214, 0, 122, 0.1);
+    border-color: rgba(255, 255, 255, 0.2); /* Gentle white halo border */
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), 0 0 24px rgba(255, 255, 255, 0.06); /* Soft white mist glow layer */
 }
 
 /* ==========================================================================
@@ -197,6 +196,7 @@ p {
     will-change: transform;
 }
 
+/* Personal Brand Accent Button */
 .btn-instagram {
     border: 2px solid var(--brand-accent);
     color: #ffffff;
@@ -208,17 +208,7 @@ p {
     transform: translateY(-2px); 
 }
 
-.btn-discord {
-    border: 2px solid var(--discord-blurple);
-    color: #ffffff;
-}
-
-.btn-discord:hover {
-    background: var(--discord-blurple);
-    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
-    transform: translateY(-2px); 
-}
-
+/* Steam Button */
 .btn-steam {
     border: 2px solid var(--steam-white);
     color: #ffffff;
@@ -230,15 +220,40 @@ p {
     transform: translateY(-2px); 
 }
 
-.btn-crew {
-    border: 2px solid #28a745; /* Matches the custom green glow of your crew logo */
+/* Xbox X Button - Blue (Crew Website) */
+.btn-xbox-blue {
+    border: 2px solid #0078d4;
     color: #ffffff;
 }
 
-.btn-crew:hover {
-    background: #28a745;
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.4);
-    transform: translateY(-2px); 
+.btn-xbox-blue:hover {
+    background: #0078d4;
+    box-shadow: 0 0 15px rgba(0, 120, 212, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Xbox B Button - Red (Discord Server) */
+.btn-xbox-red {
+    border: 2px solid #e81123;
+    color: #ffffff;
+}
+
+.btn-xbox-red:hover {
+    background: #e81123;
+    box-shadow: 0 0 15px rgba(232, 17, 35, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Xbox A Button - Green (CATZ Instagram) */
+.btn-xbox-green {
+    border: 2px solid #107c11;
+    color: #ffffff;
+}
+
+.btn-xbox-green:hover {
+    background: #107c11;
+    box-shadow: 0 0 15px rgba(16, 124, 17, 0.4);
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -274,12 +289,12 @@ p {
    8. GLOBAL RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 480px) {
-    body {
+   body {
         padding: 30px 16px;
     }
     
-    .wrapper {
-        gap: 24px;
+   .wrapper {
+        gap: 36px; 
     }
     
     .content-section {
