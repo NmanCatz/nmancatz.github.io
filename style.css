@@ -296,18 +296,9 @@ p {
 /* ==========================================================================
    8. GLOBAL RESPONSIVE MEDIA QUERIES
    ========================================================================== */
-@media (max-width: 1024px) { 
-    body {
-        padding: 40px 32px; 
-    }
-    
+@media (max-width: 1024px) {
     .wrapper {
         gap: 40px; 
-    }
-    
-    .content-section {
-        padding: 36px 36px 40px; 
-        border-radius: 20px;
     }
     
     h1 {
@@ -318,13 +309,14 @@ p {
         font-size: 1.85rem;
         margin-bottom: 24px;
     }
-    
+
     p {
         font-size: 1.05rem;
         line-height: 1.7;
         margin-bottom: 20px;
     }
 
+    
     .button-group {
         grid-template-columns: 1fr; 
         gap: 16px; 
@@ -339,5 +331,36 @@ p {
     .btn {
         width: 100%;
         max-width: 100%; 
+    }
+    
+   
+    body {
+        padding: 40px 32px; 
+    }
+    .content-section {
+        padding: 36px 36px 40px; 
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 30px 16px; 
+    }
+    
+    .content-section {
+        padding: 24px 24px 32px; 
+    }
+    
+    h1 {
+        font-size: 2.2rem; 
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.65;
     }
 }
