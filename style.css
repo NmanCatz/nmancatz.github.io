@@ -1,7 +1,13 @@
 /* ==========================================================================
    1. ROOT VARIABLES & GLOBAL SETUP
    ========================================================================== */
+html {
+    scroll-behavior: smooth; 
+}
+
 :root {
+    color-scheme: dark;
+
     --bg-image: url('img/background.jpg');
 
     --text-primary: #ffffff;
@@ -33,7 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 50px 24px;
+    padding: 170px 24px 60px 24px;
     position: relative;
 }
 
@@ -83,7 +89,7 @@ h1 {
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: -0.5px;
-    margin-bottom: 6px;
+    margin-bottom: 16px; 
     text-shadow: 0 0 25px rgba(255, 255, 255, 0.35); 
 }
 
@@ -112,7 +118,7 @@ p {
     color: rgba(255, 255, 255, 0.75); 
     line-height: 1.5;
     letter-spacing: 0.3px;
-    margin-top: 10px;                  
+    margin-top: 0;                   
     margin-bottom: 0;                  
 }
 
@@ -124,8 +130,8 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 40px;    
-    margin-bottom: 16px; 
+    margin-top: 20px;    
+    margin-bottom: 56px; 
 }
 
 .profile-picture {
@@ -294,7 +300,55 @@ p {
 }
 
 /* ==========================================================================
-   8. GLOBAL RESPONSIVE MEDIA QUERIES
+   8. FLOATING PILL NAVIGATION DOCK
+   ========================================================================== */
+.navbar {
+    position: absolute;  
+    top: 32px;              
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(16, 39, 90, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    padding: 12px 36px; 
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    width: max-content;
+}
+
+.nav-brand {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-primary);
+    letter-spacing: 1.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   9. GLOBAL RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
     .wrapper {
@@ -316,7 +370,6 @@ p {
         margin-bottom: 20px;
     }
 
-    
     .button-group {
         grid-template-columns: 1fr; 
         gap: 16px; 
@@ -333,10 +386,10 @@ p {
         max-width: 100%; 
     }
     
-   
     body {
-        padding: 40px 32px; 
+        padding: 150px 32px 40px; 
     }
+
     .content-section {
         padding: 36px 36px 40px; 
     }
@@ -344,13 +397,27 @@ p {
 
 @media (max-width: 480px) {
     body {
-        padding: 30px 16px; 
+        padding: 130px 16px 30px; 
+    }
+
+    .navbar {
+        top: 20px;
+        gap: 24px;
+        padding: 10px 24px;
+    }
+
+    .nav-links {
+        gap: 18px;
     }
     
     .content-section {
         padding: 24px 24px 32px; 
     }
     
+    .community-logo {
+        width: 115px;
+    }
+
     h1 {
         font-size: 2.2rem; 
     }
@@ -360,7 +427,7 @@ p {
     }
     
     p {
-        font-size: 1rem;
+        font-size: 1.08rem;
         line-height: 1.65;
     }
 }
