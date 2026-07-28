@@ -489,7 +489,14 @@ p {
     }
     
     .content-section {
-        padding: 24px 24px 32px; 
+        padding: 24px 16px 28px; 
+        border-radius: 16px; 
+        margin-bottom: 24px; 
+    }
+
+    .content-section:hover {
+        transform: none;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     }
     
     .community-logo {
