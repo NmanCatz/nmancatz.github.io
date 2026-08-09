@@ -2,519 +2,542 @@
    1. ROOT VARIABLES & GLOBAL SETUP
    ========================================================================== */
 html {
-    scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 :root {
-    color-scheme: dark;
+  color-scheme: dark;
 
-    --bg-image: url('img/background.jpg');
+  --bg-image: url("img/background.jpg");
 
-    --text-primary: #f7f1e8;
-    --text-secondary: #d8d2c8;
+  --text-primary: #f7f1e8;
+  --text-secondary: #d8d2c8;
 
-    --brand-accent: #d6007a;
-    --discord-blurple: #5865F2;
-    --steam-white: #ffffff;
+  --brand-accent: #d6007a;
+  --discord-blurple: #5865f2;
+  --steam-white: #ffffff;
 
-    --background-dark: #081A3A;
-    --background-light: #10275A;
+  --background-dark: #081a3a;
+  --background-light: #10275a;
 
-    --divider-line: rgba(255, 255, 255, 0.15);
+  --divider-line: rgba(255, 255, 255, 0.15);
 
-    --content-width: 780px; 
+  --content-width: 780px;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text-primary);
-    background-color: #040b1a; 
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 170px 24px 60px 24px;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: var(--text-primary);
+  background-color: #040b1a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 170px 24px 60px 24px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-        linear-gradient(rgba(5, 12, 28, 0.25), rgba(5, 12, 28, 0.25)), 
-        radial-gradient(rgba(255, 255, 255, 0.1) 1.2px, transparent 0), 
-        linear-gradient(180deg, rgba(6, 17, 38, 0.88) 0%, rgba(4, 11, 26, 0.98) 100%), 
-        var(--bg-image);
-    background-size: cover, 32px 32px, cover, cover; 
-    background-position: center top;
-    z-index: 1;
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(5, 12, 28, 0.25), rgba(5, 12, 28, 0.25)),
+    radial-gradient(rgba(255, 255, 255, 0.1) 1.2px, transparent 0),
+    linear-gradient(
+      180deg,
+      rgba(6, 17, 38, 0.88) 0%,
+      rgba(4, 11, 26, 0.98) 100%
+    ),
+    var(--bg-image);
+  background-size:
+    cover,
+    32px 32px,
+    cover,
+    cover;
+  background-position: center top;
+  z-index: 1;
 }
 
 /* ==========================================================================
    2. LAYOUT CONTAINERS & SYSTEM RHYTHM
    ========================================================================== */
 .wrapper {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: var(--content-width);
-    display: flex;
-    flex-direction: column;
-    gap: 64px; 
-    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-width);
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================================================
    3. TYPOGRAPHY HIERARCHY
    ========================================================================== */
 h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 16px; 
-    text-shadow: 0 0 25px rgba(255, 255, 255, 0.35); 
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
 }
 
 h2 {
-    font-size: 2.1rem;
-    font-weight: 600;
-    margin-bottom: 32px; 
-    letter-spacing: -0.3px;
-    background: linear-gradient(180deg, #ffffff 30%, var(--text-secondary) 100%);
-    -webkit-background-clip: text;
-    background-clip: text; 
-    -webkit-text-fill-color: transparent;
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  letter-spacing: -0.3px;
+  background: linear-gradient(180deg, #ffffff 30%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 p {
-    font-size: 1.05rem;
-    line-height: 1.78;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-    max-width: 660px; 
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  max-width: 660px;
 }
 
 .tagline {
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.75); 
-    line-height: 1.5;
-    letter-spacing: 0.3px;
-    margin-top: 0;                   
-    margin-bottom: 0;                  
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
    4. PROFILE HEADER & IDENTITY
    ========================================================================== */
 .header-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;    
-    margin-bottom: 56px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 56px;
 }
 
 .profile-picture {
-    width: 250px;
-    height: 320px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 50%;
-    margin-bottom: 36px; 
-    border: 3px solid rgba(214, 0, 122, 0.5); 
-    box-shadow: 0 0 20px rgba(214, 0, 122, 0.25);
+  width: 250px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  margin-bottom: 36px;
+  border: 3px solid rgba(214, 0, 122, 0.5);
+  box-shadow: 0 0 20px rgba(214, 0, 122, 0.25);
 }
 
 .community-logo {
-    width: 150px;
-    height: auto;
-    margin-top: -10px;  
-    margin-bottom: 16px; 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    filter: drop-shadow(0 0 12px rgba(40, 167, 69, 0.35));
+  width: 150px;
+  height: auto;
+  margin-top: -10px;
+  margin-bottom: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(0 0 12px rgba(40, 167, 69, 0.35));
 }
 
 /* ==========================================================================
    5. GLASSMORPHISM CARD CONTAINERS & PHOTO GRID
    ========================================================================== */
 .content-section {
-    background: rgba(16, 39, 90, 0.27);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 40px 48px; 
-    border-radius: 20px;
-    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.28);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(16, 39, 90, 0.27);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 40px 48px;
+  border-radius: 20px;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.28);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .content-section:hover {
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.16);
-    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.32);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.32);
 }
 
-
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 32px 0 36px 0;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 36px 0;
+  width: 100%;
 }
 
 .grid-shot {
-    width: 100%;
-    height: 340px; 
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .grid-shot:hover {
-     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.32);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
 }
 
-
 .crew-image-container {
-    position: relative;
-    margin-top: 32px; 
-    margin-bottom: 24px;
-    width: 100%;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08); 
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 0;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#community .button-group {
+  /* Match the 36px gap below the About Me photo grid. */
+  margin-top: 36px;
 }
 
 .crew-image-container:hover {
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.32);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
 }
 
 .crew-image-container::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        180deg, 
-        rgba(12, 13, 16, 0.3) 0%, 
-        transparent 15%, 
-        transparent 85%, 
-        rgba(12, 13, 16, 0.4) 100%
-    );
-    pointer-events: none; 
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 13, 16, 0.3) 0%,
+    transparent 15%,
+    transparent 85%,
+    rgba(12, 13, 16, 0.4) 100%
+  );
+  pointer-events: none;
 }
 
 .crew-showcase-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    filter: brightness(0.8) contrast(1.02);
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: brightness(0.8) contrast(1.02);
 }
 
 /* ==========================================================================
    6. UI BUTTON COMPONENTS 
    ========================================================================== */
 .button-group {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 14px; 
-    margin-top: 28px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+  width: 100%;
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: max-content; 
-    min-width: 224px;
-    white-space: nowrap; 
-    margin: 0;
-    padding: 15px 28px; 
-    font-size: 1rem; 
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 50px;
-    background: transparent;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    will-change: transform;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 50px;
+  width: max-content;
+  min-width: 224px;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 50px;
+  background: transparent;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  will-change: transform;
 }
 
 .button-group .btn {
-    width: 100%; 
-    min-width: 0; 
-    max-width: none;
-    margin: 0; 
-    padding: 15px 12px; 
-    font-size: 0.95rem; 
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0 12px;
+  font-size: 0.95rem;
 }
 
 .btn:hover {
-    transform: translateY(-3px); 
+  transform: translateY(-3px);
 }
 
 .btn-instagram {
-    border: 2px solid var(--brand-accent);
-    color: #ffffff;
+  border: 2px solid var(--brand-accent);
+  color: #ffffff;
 }
 
 .btn-instagram:hover {
-    background: var(--brand-accent);
-    box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
+  background: var(--brand-accent);
+  box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
 }
 
 .btn-steam {
-    border: 2px solid var(--steam-white);
-    color: #ffffff;
+  border: 2px solid var(--steam-white);
+  color: #ffffff;
 }
 
 .btn-steam:hover {
-    background: var(--steam-white);
-    color: #0f0f0f;
+  background: var(--steam-white);
+  color: #0f0f0f;
 }
 
 .btn-xbox-blue {
-    border: 2px solid #0078d4;
-    color: #ffffff;
+  border: 2px solid #0078d4;
+  color: #ffffff;
 }
 
 .btn-xbox-blue:hover {
-    background: #0078d4;
-    box-shadow: 0 0 15px rgba(0, 120, 212, 0.4);
+  background: #0078d4;
+  box-shadow: 0 0 15px rgba(0, 120, 212, 0.4);
 }
 
 .btn-xbox-red {
-    border: 2px solid #e81123;
-    color: #ffffff;
+  border: 2px solid #e81123;
+  color: #ffffff;
 }
 
 .btn-xbox-red:hover {
-    background: #e81123;
-    box-shadow: 0 0 15px rgba(232, 17, 35, 0.4);
+  background: #e81123;
+  box-shadow: 0 0 15px rgba(232, 17, 35, 0.4);
 }
 
 .btn-xbox-green {
-    border: 2px solid #107c11;
-    color: #ffffff;
+  border: 2px solid #107c11;
+  color: #ffffff;
 }
 
 .btn-xbox-green:hover {
-    background: #107c11;
-    box-shadow: 0 0 15px rgba(16, 124, 17, 0.4);
+  background: #107c11;
+  box-shadow: 0 0 15px rgba(16, 124, 17, 0.4);
 }
 
 /* ==========================================================================
    7. MISC & UTILITIES (SCROLLBAR, FOOTER)
    ========================================================================== */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #040b1a; 
+  background: #040b1a;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(214, 0, 122, 0.2);
-    border-radius: 10px;
-    border: 2px solid #040b1a; 
+  background: rgba(214, 0, 122, 0.2);
+  border-radius: 10px;
+  border: 2px solid #040b1a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(214, 0, 122, 0.65);
+  background: rgba(214, 0, 122, 0.65);
 }
 
 .site-footer {
-    text-align: center;
-    margin-top: 48px;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.35);
-    letter-spacing: 0.2px;
+  text-align: center;
+  margin-top: 48px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.2px;
 }
 
 /* ==========================================================================
    8. FLOATING PILL NAVIGATION DOCK
    ========================================================================== */
 .navbar {
-    position: absolute;  
-    top: 32px;              
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(16, 39, 90, 0.35);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 100px;
-    padding: 12px 36px; 
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-    width: max-content;
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(16, 39, 90, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  padding: 12px 36px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  width: max-content;
 }
 
 .nav-brand {
-    font-size: 1.1rem;
-    font-weight: 800;
-    text-decoration: none;
-    color: var(--text-primary);
-    letter-spacing: 1.5px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-primary);
+  letter-spacing: 1.5px;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 .nav-links a {
-    font-size: 0.92rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: var(--text-secondary);
-    transition: color 0.2s ease;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 /* ==========================================================================
    9. GLOBAL RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
-    .wrapper {
-        gap: 40px; 
-    }
-    
-    h1 {
-        font-size: 2.6rem;
-    }
-    
-    h2 {
-        font-size: 1.85rem;
-        margin-bottom: 24px;
-    }
+  .wrapper {
+    gap: 40px;
+  }
 
-    p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        margin-bottom: 20px;
-    }
+  h1 {
+    font-size: 2.6rem;
+  }
 
-    .button-group {
-        grid-template-columns: 1fr; 
-        gap: 16px; 
-    }
+  h2 {
+    font-size: 1.85rem;
+    margin-bottom: 24px;
+  }
 
-    .button-group .btn {
-        width: 100%; 
-        padding: 15px 28px; 
-        font-size: 1rem;
-    }
-    
-    .btn {
-        width: 100%;
-        max-width: 100%; 
-    }
-    
-    body {
-        padding: 150px 32px 40px; 
-    }
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
 
-    .content-section {
-        padding: 36px 36px 40px; 
-    }
+  .button-group {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .button-group .btn {
+    width: 100%;
+    padding: 0 28px;
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    padding: 150px 32px 40px;
+  }
+
+  .content-section {
+    padding: 36px 36px 40px;
+  }
 }
 
 @media (max-width: 600px) {
-    .photo-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 
-    .grid-shot {
-        height: 280px;
-    }
+  .grid-shot {
+    height: 280px;
+  }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 130px 16px 30px; 
-    }
+  body {
+    padding: 130px 16px 30px;
+  }
 
-    .navbar {
-        top: 20px;
-        gap: 24px;
-        padding: 10px 24px;
-    }
+  .navbar {
+    top: 20px;
+    gap: 24px;
+    padding: 10px 24px;
+  }
 
-    .nav-links {
-        gap: 18px;
-    }
-    
-    .content-section {
-        padding: 24px 16px 28px; 
-        border-radius: 16px; 
-        margin-bottom: 24px; 
-    }
+  .nav-links {
+    gap: 18px;
+  }
 
-    .content-section:hover {
-        transform: none;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-    }
-    
-    .community-logo {
-        width: 115px;
-    }
+  .content-section {
+    padding: 24px 16px 28px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
 
-    h1 {
-        font-size: 2.2rem; 
-    }
-    
-    h2 {
-        font-size: 1.6rem;
-    }
-    
-    p {
-        font-size: 1.08rem;
-        line-height: 1.65;
-    }
+  .content-section:hover {
+    transform: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  .community-logo {
+    width: 115px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.08rem;
+    line-height: 1.65;
+  }
 }
