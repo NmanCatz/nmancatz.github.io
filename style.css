@@ -15,7 +15,6 @@ html {
 
   --brand-accent: #d6007a;
   --discord-blurple: #5865f2;
-  --steam-white: #ffffff;
 
   --background-dark: #081a3a;
   --background-light: #10275a;
@@ -320,16 +319,6 @@ p {
 .btn-instagram:hover {
   background: var(--brand-accent);
   box-shadow: 0 0 15px rgba(214, 0, 122, 0.3);
-}
-
-.btn-steam {
-  border: 2px solid var(--steam-white);
-  color: #ffffff;
-}
-
-.btn-steam:hover {
-  background: var(--steam-white);
-  color: #0f0f0f;
 }
 
 .btn-xbox-blue {
