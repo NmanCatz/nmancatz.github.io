@@ -168,7 +168,7 @@ p {
 }
 
 /* ==========================================================================
-   5. GLASSMORPHISM CARD CONTAINERS & PHOTO GRID
+   5. GLASSMORPHISM CARDS, PHOTO GRID & INSTAGRAM FEED
    ========================================================================== */
 .content-section {
   background: rgba(16, 39, 90, 0.27);
@@ -218,6 +218,24 @@ p {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
 }
 
+.instagram-title {
+  margin: 32px 0 18px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+}
+
+.instagram-feed {
+  width: 100%;
+  margin: 0 0 36px;
+}
+
+.instagram-feed behold-widget {
+  display: block;
+  width: 100%;
+}
+
 .crew-image-container {
   position: relative;
   margin-top: 32px;
@@ -234,7 +252,7 @@ p {
 }
 
 #community .button-group {
-  /* Match the 36px gap below the About Me photo grid. */
+  /* Match the 36px gap below the About Me media area. */
   margin-top: 36px;
 }
 
@@ -267,7 +285,7 @@ p {
 }
 
 /* ==========================================================================
-   6. UI BUTTON COMPONENTS 
+   6. UI BUTTON COMPONENTS
    ========================================================================== */
 .button-group {
   display: grid;
@@ -515,6 +533,15 @@ p {
 
   .community-logo {
     width: 115px;
+  }
+
+  .instagram-title {
+    margin-top: 28px;
+    font-size: 1.2rem;
+  }
+
+  .instagram-feed {
+    margin-bottom: 30px;
   }
 
   h1 {
