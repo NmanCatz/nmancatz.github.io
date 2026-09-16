@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://nmancatz.github.io/">
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="instagram.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -44,23 +45,40 @@
         <section id="about" class="content-section">
             <h2>About Me</h2>
             
-        <p>
-          I am a PC gamer and a longtime fan of GTA V. I have been creating virtual photography in Los Santos since 2019, and I am still having fun exploring new ideas and improving my content style. I always strive to treat people with as much respect and kindness as possible! 
-        </p>
+            <p>
+              I am a PC gamer and a longtime fan of GTA V. I have been creating virtual photography in Los Santos since 2019, and I am still having fun exploring new ideas and improving my content style. I always strive to treat people with as much respect and kindness as possible! 
+            </p>
 
-        <p>
-          I mainly photograph my GTA Online character. As you can tell from the goofy cat ear headband that she wears in literally every photo I create, I love mixing my real-life love of cats into my photography. I also create reels that I hope capture some emotion, nostalgia, and atmosphere. I am always down to collaborate with fellow creators!
-        </p>
+            <p>
+              I mainly photograph my GTA Online character. As you can tell from the goofy cat ear headband that she wears in literally every photo I create, I love mixing my real-life love of cats into my photography. I also create reels that I hope capture some emotion, nostalgia, and atmosphere. I am always down to collaborate with fellow creators!
+            </p>
 
-        <p>
-          I am currently studying Visual Communications at NAIT with the goal of becoming a graphic designer. I have also started diving into web development and coded both this site and my crew website using Visual Studio Code.
-        </p>
-            <!-- 3-SHOT FEATURED PREVIEW ROW -->
-    <div class="photo-grid">
-        <img src="img/del-perro-pier-portrait.jpeg" alt="GTA V virtual photography of a female avatar with pink hair and cat ears posing at Del Perro Pier in front of the ferris wheel" class="grid-shot">
-        <img src="img/richman-bench-portrait.jpeg" alt="GTA V virtual portrait of a female avatar with burgundy hair sitting on a wooden park bench in a black dress" class="grid-shot">
-        <img src="img/biker-portrait.jpeg" alt="GTA V character portrait of a blonde avatar with cat ears and a green flannel shirt leaning back on a motorcycle" class="grid-shot">
-    </div>
+            <p>
+              I am currently studying Visual Communications at NAIT with the goal of becoming a graphic designer. I have also started diving into web development and coded both this site and my crew website using Visual Studio Code.
+            </p>
+
+            <!-- AUTOMATIC INSTAGRAM FEED -->
+            <h3 class="instagram-title">Latest Photography</h3>
+
+            <div class="instagram-feed">
+                <behold-widget feed-id="qOk9dXJUod7fjxoC1FO9"></behold-widget>
+            </div>
+
+            <script>
+              (() => {
+                if (window.__bhldScript) return;
+                window.__bhldScript = true;
+
+                const d = document;
+                const s = d.createElement("script");
+                s.type = "module";
+                s.src = "https://w.behold.so/widget.js";
+
+                setTimeout(() => {
+                  d.head.append(s);
+                }, 0);
+              })();
+            </script>
       
             <a href="https://www.instagram.com/nman.catz" class="btn btn-instagram" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i> Follow on Instagram
@@ -71,20 +89,19 @@
         <section id="community" class="content-section">
             <img src="img/cat-eye-logo.png" alt="Catz Community Eye Logo" class="community-logo">
             
-        <h2>The CATZ Community</h2>
+            <h2>The CATZ Community</h2>
 
-        <p>
-            Do you like GTA crews that value friendships, loyalty, fun times, and/or cats? Then the CATZ Community might be the purrfect fit for you!
-        </p>
+            <p>
+                Do you like GTA crews that value friendships, loyalty, fun times, and/or cats? Then the CATZ Community might be the purrfect fit for you!
+            </p>
 
-        <p>
-            CATZ is one gamer family united under Project Cat Eye, our official crew for players on PC, PlayStation, and Xbox. No matter which platform you play on, you will be part of the same crew and community. Visit our crew website to learn more and join us! (Don't worry, we won't bite if you prefer dogs!)
-        </p>
+            <p>
+                CATZ is one gamer family united under Project Cat Eye, our official crew for players on PC, PlayStation, and Xbox. No matter which platform you play on, you will be part of the same crew and community. Visit our crew website to learn more and join us! (Don't worry, we won't bite if you prefer dogs!)
+            </p>
 
-            
-        <div class="crew-image-container">
-            <img src="img/catz-group-photo.jpeg" alt="CATZ crew members lined up on motorcycles in a circle" class="crew-showcase-img">
-        </div>
+            <div class="crew-image-container">
+                <img src="img/catz-group-photo.jpeg" alt="CATZ crew members lined up on motorcycles in a circle" class="crew-showcase-img">
+            </div>
 
             <div class="button-group">
                 <!-- Blue (Xbox X) -->
