@@ -8,7 +8,6 @@ html {
 :root {
   color-scheme: dark;
 
-  --bg-image: url("img/background.jpg");
 
   --text-primary: #f7f1e8;
   --text-secondary: #d8d2c8;
@@ -35,7 +34,7 @@ body {
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif;
   color: var(--text-primary);
-  background-color: #040b1a;
+  background-color: #03043a;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -50,21 +49,18 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
+
   background:
-    linear-gradient(rgba(5, 12, 28, 0.25), rgba(5, 12, 28, 0.25)),
-    radial-gradient(rgba(255, 255, 255, 0.1) 1.2px, transparent 0),
-    linear-gradient(
-      180deg,
-      rgba(6, 17, 38, 0.88) 0%,
-      rgba(4, 11, 26, 0.98) 100%
+    radial-gradient(
+      rgba(255, 255, 255, 0.08) 1.2px,
+      transparent 1.2px
     ),
-    var(--bg-image);
+    #00007000;
+
   background-size:
-    cover,
     32px 32px,
-    cover,
-    cover;
-  background-position: center top;
+    auto;
+
   z-index: 1;
 }
 
